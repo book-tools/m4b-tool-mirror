@@ -26,5 +26,3 @@ jobs:
           platforms: linux/amd64,linux/arm64/v8
           push: true
           tags: csandman/m4b-tool:latest,csandman/m4b-tool:${{ github.event.release.tag_name }}
-          cache-from: type=local,src=/tmp/.buildx-cache-latest
-          cache-to: type=local,dest=/tmp/.buildx-cache-latest-new,mode=max
