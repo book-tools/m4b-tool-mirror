@@ -90,7 +90,7 @@ COPY --from=builder /usr/local/lib/libmp4v2* /usr/local/lib/
 ARG M4B_TOOL_DOWNLOAD_LINK="https://github.com/sandreas/m4b-tool/releases/latest/download/m4b-tool.tar.gz"
 
 # workaround to copy a local m4b-tool.phar IF it exists
-ADD ./Dockerfile ./dist/m4b-tool.phar* /tmp/
+ADD ./Dockerfile /tmp/
 RUN echo "---- INSTALL M4B-TOOL ----" \
     && if [ ! -f /tmp/m4b-tool.phar ]; then \
             echo "!!! DOWNLOADING ${M4B_TOOL_DOWNLOAD_LINK} !!!" && wget "${M4B_TOOL_DOWNLOAD_LINK}" -O /tmp/m4b-tool.tar.gz && \
